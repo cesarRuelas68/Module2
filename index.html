@@ -4,15 +4,17 @@
     </head>
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
-    <link rel="stylesheet" href="style.css"></link>
+    <link rel="stylesheet" href="style.css">
     <body ng-controller="Controller2">
         <div class="row">
             <h1 class="h1">Super market list</h1>
             <div class="column"> 
                 <div class="row"><h1 class="h1">To buy</h1></div>
-                <ul>
-                    <li ng-repeat="item in shoppingList">Buy {{item.Number}} of {{item.Name}}</li>
-                </ul>
+                <div class="row">
+                    <ul>
+                        <li ng-repeat="item in shoppingList">Buy {{item.Number}} of {{item.Name}}</li>
+                    </ul>
+                </div>
             </div>
             <div class="column"> 
                 <div class="row"><h1 class="h1">Already Bought</h1></div>
