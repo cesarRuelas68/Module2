@@ -10,14 +10,25 @@
             <h1 class="h1">Super market list</h1>
             <div class="column"> 
                 <div class="row"><h1 class="h1">To buy</h1></div>
-                <div class="row">
+                <div class="row" ng-if="!empty">
                     <ul>
-                        <li ng-repeat="item in shoppingList">Buy {{item.Number}} of {{item.Name}}</li>
+                        <li ng-repeat="item in shoppingList">Buy {{item.Number}} of {{item.Name}} <button ng-click="moveItem($index)">Bought</button></li>
                     </ul>
+                </div>
+                <div ng-if="empty">
+                    <h2>Everything is bought!</h2>
                 </div>
             </div>
             <div class="column"> 
                 <div class="row"><h1 class="h1">Already Bought</h1></div>
+                <div class="row" ng-if="empty2">
+                    <h2>Nothing bought yet</h2>
+                </div>
+                <div ng-if="!empty2"> 
+                    <ul>
+                        <li ng-repeat="item in alreadybought">Bought {{item.Number}} of {{item.Name}} </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </body>
